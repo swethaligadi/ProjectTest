@@ -1,0 +1,125 @@
+Dictionary
+1. Dictionary holds key:value pair
+2. Values in a dictionary can be of any datatype and can be duplicated
+3. keys can’t be repeated
+4. Dictionary keys are case sensitive, same name but different cases of Key will be treated distinctly.
+5. Dictionary is mutable
+
+
+# Creating a Dictionary  
+Type 1 :
+Dict = {1: 'Geeks', 2: 'For', 3: 'Geeks'} 
+
+# Creating a Dictionary with Mixed keys 
+Type 2 :
+Dict = {'Name': 'Geeks', 1: [1, 2, 3, 4]} 
+
+# Creating an empty Dictionary 
+Type 3 :
+Dict = {} 
+print("Empty Dictionary: ")  
+  
+# Creating a Dictionary with dict() method 
+Type 4 :
+Dict = dict({1: 'Geeks', 2: 'For', 3:'Geeks'}) 
+  
+# Creating a Dictionary with each item as a Pair 
+Type 5 :
+Dict = dict([(1, 'Geeks'), (2, 'For')]) 
+
+# Creating a Nested Dictionary   
+Dict = {1: 'Geeks', 2: 'For', 3:{'A' : 'Welcome', 'B' : 'To', 'C' : 'Geeks'}} 
+
+Adding one element at a time
+Dict[2] = 'For'
+Dict[3] = 1
+
+# Adding set of values to a single Key 
+Dict['Value_set'] = 2, 3, 4
+
+# Updating existing Key's Value 
+Dict[2] = 'Welcome'
+
+# accessing a element using key 
+Dict = {1: 'Geeks', 'name': 'For', 3: 'Geeks'} 
+print("Accessing a element using key:") 
+print(Dict['name'])
+
+There is also a method called get() that will also help in acessing the element from a dictionary.
+# Creating a Dictionary  
+Dict = {1: 'Geeks', 'name': 'For', 3: 'Geeks'} 
+
+# accessing a element using get() method 
+print("Accessing a element using get:") 
+print(Dict.get(3))
+
+o/p: Geeks
+
+
+Nested dictionary
+
+# Creating a Dictionary  
+>>> col = {'Dict1': {1: 'Geeks'}, 'Dict2': {'Name': 'For'}}
+
+Accessing elements
+>>> col['Dict1']
+{1: 'Geeks'}
+
+>>> col['Dict2']
+{'Name': 'For'}
+
+Accessing elements
+>>> col
+{'Dict1': {1: 'Geeks'}, 'Dict2': {'Name': 'For'}}
+
+>>> col['Dict1']
+{1: 'Geeks'}
+
+>>> col['Dict1'][1]
+'Geeks'
+
+>>> col['Dict2']['Name']
+'For'
+
+
+copy()	 :They copy() method returns a shallow copy of the dictionary.
+clear()	 :The clear() method removes all items from the dictionary.
+pop()	 :Removes and returns an element from a dictionary having the given key.
+popitem():Removes the arbitrary key-value pair from the dictionary and returns it as tuple.
+get()    :It is a conventional method to access a value for a key.dictionary_name.values()	returns a list of all the values available in a given dictionary.
+str()	 :Produces a printable string representation of a dictionary.
+update() :Adds dictionary dict2’s key-values pairs to dict
+setdefault() :Set dict[key]=default if key is not already in dict
+keys()	 :Returns list of dictionary dict’s keys
+items()	 :Returns a list of dict’s (key, value) tuple pairs
+has_key():Returns true if key in dictionary dict, false otherwise
+fromkeys():Create a new dictionary with keys from seq and values set to value.
+type()	  :Returns the type of the passed variable.
+cmp()	  :Compares elements of both dict.
+
+
+
+iterate through dictionary by :
+Iterate through all keys
+Iterate through all values
+Iterate through all key, value pairs
+
+
+1. Iterate through all keys : 
+statesAndCapitals = { 
+                     'Gujarat' : 'Gandhinagar', 
+                     'Maharashtra' : 'Mumbai', 
+                     'Rajasthan' : 'Jaipur', 
+                     'Bihar' : 'Patna'
+                    }
+
+for state in statesAndCapitals: 
+    print(state) 
+
+2. Iterate through all values
+for cap in statesAndCapitals.values(): 
+    print(cap)
+
+3. # Iterating over values 
+for state, capital in statesAndCapitals.items(): 
+    print(state, ":", capital) 
