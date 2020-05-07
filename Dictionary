@@ -1,5 +1,7 @@
+new
 Dictionary
 1. Dictionary holds key:value pair
+
 2. Values in a dictionary can be of any datatype and can be duplicated
 3. keys can’t be repeated
 4. Dictionary keys are case sensitive, same name but different cases of Key will be treated distinctly.
