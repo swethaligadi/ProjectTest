@@ -1,0 +1,99 @@
+----------- *REST API* --------------------------------------
+1. *Rest API* defines a set of operations where developers can perform request and receive response via http protocol
+2. Rest API behaves as intermediate layers between application layer and back-end layer and get data from db (from backend) . Here db is thirdparty
+3. So here in application we enter "1123 newyork" as pincode in db we cannot get data using pincode we can get by cityname .so we write rest api such that we get output using cityname from db. CALL : Rest api we convert 1123 newyork into cityname and write queries which make call to backend db to get whether report of the city name. so all these code will be wrapped into an API call . WHich hits the db to get wheather report. Rest api parsers the request receieved from application before sending to backend
+4. In rest api we give input in form of json/xml and receive output in form of json/xml : *Input (json/xml)> Rest API > output (json/xml)*
+5. rest api is purely based on http call
+6. It TALKS TO backend in form of https
+7. we get response from backend to restapi and from restapi to application
+ rest api works in business logic
+9. we may not have access to hit to db so rest api calls will be exposed by third party services only
+10. Rest api is independent of what platform i am building my application , my application code mat be built in .net and backend thirdparty may be built in java we can use rest api since it is independent of language
+11. We will validate the response returned by restapi in json/xml as is it what we requested or not (edited) 
+If anything wrong in restapi building then we will get wrong responses
+we should also check whtever rest api returns same is reflected in our application , if not then it myt be application and rest api integration problem
+12. How mi call goes to specific rest api ? if i want to talk to abc then i will call abc mobile number in that lines that number is endpoint. That endpoint is divided into Baseurl+resources+parameters. We need to ask which are the endpint for rest api testing when we are assigned task
+
+endpoint can be constructed from these three values
+ALL websites are hosted in world wide web (edited) 
+so we need to know what website we need to hit that is baseurl, because there will be more than one website hosted in www.
+ex : www.qaacedemy.com , here baseurl is qaacedemy (edited) 
+baseurl is also called as host name
+so if i go to qaacedemy website i can reach courses page , education page etc listed on website. so here each file ie.. courses is a resource
+parameters means data
+Syntax : Baseurl/resources?parameters
+so in qa academy : qaacedmy/course-details/id=wsev
+here i goto qaacedmy i select couse-detil this course detail is resource . here resource contains lot of data , means corse detail contains lot of cources like sceinse social math etc i need to click on which data i need so that i will send in paramete so here i selected webservices course under course-details so id=wsev is parameter
+
+resource and parameter can be separted by ?
+question mark
+
+Types of rest request :
+
+GET : If you hit an endpoint with rest request type as GET  : API SERVER will understand that i need to give some details to my client. You cannot modify means u cannot add or delete anything in server . To retrieve some info from server i use GET request
+Here parameters has to be passed as part of endpoint itself (request url)
+Ex : qaclickacademy.com/courses-details?id=websecurity
+here i get the details about websecurity testing
+
+
+POST : We can add/ create something new some data into server using POST request type . 
+As per above example we can add new course , or if you want to read the review about a book it is GET , if u wanto add a review about that book then its POST.
+We wanto use POST request then we need to send parameters in form of xml/json as part of body.
+
+FOR EX : If you wanto add new course details then :
+
+Add the following in request body / payload  :
+course name=
+description=
+trainer details=
+
+These details u need to send inform of xml/json
+
+
+PUT : If u wanto replace something which is already there we need to use replace. Here also we need to send the parameters as part of body . It is similar to POST.
+
+
+DELETE : If u wanto delete some data in server we use DELETE request type.we need to send parameters in form of xml/json as part of body.Here also we will Add the following in request body / payload  :
+course name=
+description=
+trainer details=
+
+These details u need to send inform of xml/json
+
+
+Headers and Cookies :
+For few request we need to add header as well
+When i am talking to server i need to authenticate myself just to make sure that i am authorised user to access the server
+
+Header :
+Rest API will read the header and it will see the below details :
+Key : This is used to unlock the server. It is not accessable to all bcz of security issues. When i send a request the req will be encapsulted with header value and this reaches the server. HERE the server reads the header value and autheticate/recognise the user
+content-type : U need to get output inform of json so we add value for this in header .
+
+
+if i login jira , we will have a session id generated. This session id is sent as a response for login
+so if i need to create a bug in next request
+so as i am creating a new bug i use POST request " baseurl/resource name and pass body and hit endpoint
+when u do this jira will reject this why ?
+bcz rest api will forget that i am authzd user
+to make it remember we send session id in header along with this
+
+
+Baseurl/resource/paramter : This is URI
+
+
+if value of any parameter is incorrect then we get invalid request/zero request as response
+
+
+Status OK : means success
+
+PUT and DELETE are subset of POST
+
+
+
+
+
+
+
+
+
